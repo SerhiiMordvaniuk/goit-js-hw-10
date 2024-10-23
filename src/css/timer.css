@@ -27,6 +27,41 @@
     
 }
 
+
+#datetime-picker {
+    min-width: 272px;
+    height: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-right: 8px;
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color var(--time) var(--cudic);
+}
+
+#datetime-picker:hover,
+#datetime-picker:focus {
+    border: 1px solid #000;
+}
+
+ 
+
+#datetime-picker:disabled {
+    background-color: #fafafa;
+    color: #808080;
+    border-color: #808080;
+}
+
+#datetime-picker:focus-within {
+    border-color: #4e75ff;
+}
+
 .timer {
     display: flex;
     width: 346px;
