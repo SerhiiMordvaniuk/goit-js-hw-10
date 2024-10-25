@@ -2,26 +2,21 @@
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
-const createBtn = document.querySelector(".create-btn");
 const form = document.querySelector('.form');
 const input = document.querySelector('.delay');
 let delay = null;
-const lalala = 111;
 
 input.addEventListener("input", (event) => {
-    let inputValue = event.target.value
-    delay = event.target.value;  
-    console.log(delay);
-
+    delay = event.target.value;
 })
 
 form.addEventListener("submit", (event) => {
-    event.preventDefault()
-    console.log(delay);
-    createBtn.disablet = true;
+    event.preventDefault();
+
+    let checked = document.querySelector('input[name="state"]:checked');
     
     const promise = new Promise((resolve, reject) => {
-        if (lalala > 10) {
+        if (checked.value === 'fulfilled') {
             resolve(`✅ Fulfilled promise in ${delay}ms`)
         }
         else {
@@ -38,7 +33,8 @@ form.addEventListener("submit", (event) => {
                 messageColor: "black",
                 close: false,
                 timeout: 4000,
-                progressBar: false
+                progressBar: false,
+                icon: false
             })
         }, delay)
     })
@@ -51,11 +47,12 @@ form.addEventListener("submit", (event) => {
                 messageColor: "black",
                 close: false,
                 timeout: 4000,
-                progressBar: false
-            }, delay)
-        })
-        form.reset()
-    
-    })    
+                progressBar: false,
+                icon: false
+            })
+        }, delay)
+        
+    })
+    form.reset()
 });
 
