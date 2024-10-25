@@ -4,6 +4,7 @@
 .nav {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 .nav-logo {
   display: inline-flex;

@@ -66,7 +66,6 @@ function timer() {
     intervalId = setInterval(() => {
         stopTimer -= 1000
         convertMs(stopTimer);
-        
         if (stopTimer < 1000) {
         iziToast.error({
             message: 'Timer has expired ',
